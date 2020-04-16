@@ -1,7 +1,9 @@
 package com.palysafe.convertunits.service;
 
 import com.palysafe.convertunits.beans.ConversionBean;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ConversionServiceImpl implements ConversionService {
 
     private static Double DISTANCE_RATIO = 0.621371;
