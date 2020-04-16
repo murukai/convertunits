@@ -11,7 +11,7 @@ public class ConversionBean {
     private Double convertValue;
     private Double convertedValue;
     private String message;
-    private String timeTaken;
+
 
     public String getConvertFrom() {
         return convertFrom;
@@ -53,11 +53,5 @@ public class ConversionBean {
         this.message = message;
     }
 
-    public String getTimeTaken() {
-        return timeTaken;
-    }
 
-    public void setTimeTaken(String timeTaken) {
-        this.timeTaken = timeTaken;
-    }
 }

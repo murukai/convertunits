@@ -29,7 +29,9 @@ public class ApiLogger extends HandlerInterceptorAdapter {
         super.afterCompletion(request, response, handler, ex);
         long startTime = (Long)request.getAttribute("startTime");
         long endTime = System.currentTimeMillis();
+        request.setAttribute("endtime", endTime);
         long executeTime = endTime - startTime;
+        request.setAttribute("timetaken", executeTime);
         logger.info("requestId {}, Handle :{} , request take time: {}",request.getAttribute("requestId"), handler, executeTime);
     }
 
