@@ -13,7 +13,7 @@ public class ConversionServiceImpl implements ConversionService {
     public ConversionBean convertDistance(ConversionBean conversionBean) {
         if(conversionBean.getConvertFrom().equalsIgnoreCase("KM")){
             conversionBean.setConvertedValue(DISTANCE_RATIO * conversionBean.getConvertValue());
-        }else{
+        }else if(conversionBean.getConvertFrom().equalsIgnoreCase("MI")){
             conversionBean.setConvertedValue(conversionBean.getConvertValue() / DISTANCE_RATIO);
         }
 
@@ -24,7 +24,7 @@ public class ConversionServiceImpl implements ConversionService {
     public ConversionBean convertTemperature(ConversionBean conversionBean) {
         if(conversionBean.getConvertTo().equalsIgnoreCase("CELCIUS")){
             conversionBean.setConvertedValue(conversionBean.getConvertValue() - TEMPERATURE_FACTOR);
-        }else {
+        }else if(conversionBean.getConvertTo().equalsIgnoreCase("KELVIN")){
             conversionBean.setConvertedValue(conversionBean.getConvertValue() + TEMPERATURE_FACTOR);
         }
         return conversionBean;

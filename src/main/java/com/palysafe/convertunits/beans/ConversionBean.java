@@ -1,13 +1,19 @@
 package com.palysafe.convertunits.beans;
 
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 /**
  * This is a bean used to convert the values
  */
 public class ConversionBean {
 
+    @NotEmpty(message = "convertFrom values can only take values from the list {KM, MI, CELCIUS, KELVIN}")
     private String convertFrom;
+    @NotEmpty(message = "convertTo values can only take values from the list {KM, MI, CELCIUS, KELVIN}")
     private String convertTo;
+    @NotNull(message = "convertValue should have a value")
     private Double convertValue;
     private Double convertedValue;
     private String message;
